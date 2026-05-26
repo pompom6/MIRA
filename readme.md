@@ -91,22 +91,6 @@ print(caption)
 print(vqa.keys())
 ```
 
-To iterate over all questions:
-
-```python
-QUESTION_TYPES = ["open_ended", "closed_ended", "single_choice", "multiple_choice"]
-
-for _, row in df.iterrows():
-    vqa = json.loads(row["vqa_json"])
-    for question_type in QUESTION_TYPES:
-        for item in vqa.get(question_type, []):
-            question = item["question"]
-            answer = item["answer"]
-```
-
-## Integrity Notes
-
-The copied images in `MIRA-data/images/` were verified against the source PubMed image files by split and row order. All 184,479 copied images matched their source files byte-for-byte during local validation.
 
 ## Intended Use
 
